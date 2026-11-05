@@ -56,7 +56,7 @@ One way to fix it: add a `stockOf()` method to `ProductCatalog` for the check, a
 `.github/workflows/cordon.yml`:
 
 ```yaml
-- uses: actions/checkout@v4
+- uses: actions/checkout@v7
 - uses: ChrisAbner/Cordon-Modulith@v0.3.0
 ```
 
