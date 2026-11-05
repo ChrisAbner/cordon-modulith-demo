@@ -1,0 +1,13 @@
+name: cordon
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  cordon:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ChrisAbner/Cordon-Modulith@v0.3.0
