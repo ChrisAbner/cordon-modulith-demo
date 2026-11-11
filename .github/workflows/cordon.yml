@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: ChrisAbner/Cordon-Modulith@v0.3.0
+      - uses: ChrisAbner/Cordon-Modulith@v0.4.0
