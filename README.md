@@ -25,7 +25,7 @@ On `main`, Orders asks the catalog for prices through the `ProductCatalog` contr
 
 ```text
 $ vendor/bin/cordon verify
-Cordon analysed 8 files in 3 modules (3 cross-module references).
+Cordon analysed 18 files in 3 modules (3 cross-module references).
 
 No boundary violations.
 ```
@@ -35,19 +35,19 @@ No boundary violations.
 It adds a stock check, and takes two shortcuts to get there:
 
 - `PlaceOrder` reads the stock straight from Catalog's `Product` model, which is internal to Catalog.
-- A new Catalog listener decrements the stock on `OrderPlaced`, so Catalog now depends on Orders. That is not declared, and Orders already depends on Catalog, so the two modules form a cycle.
+- A new Catalog listener decrements the stock on `OrderPlaced`, so Catalog now depends on Orders, which it does not declare.
 
-Cordon reports all three rules:
+Cordon reports both:
 
 ```text
 x [internal_access] app/Modules/Orders/Services/PlaceOrder.php:21
 x [undeclared_dependency] app/Modules/Catalog/CatalogServiceProvider.php:20
 x [undeclared_dependency] app/Modules/Catalog/Listeners/DecrementStock.php:10
-x [cycles] Catalog -> Orders -> Catalog
-x [cycles] Orders -> Catalog -> Orders
 
-5 boundary violations.
+3 boundary violations.
 ```
+
+Orders already depends on Catalog, but listening to an event does not close a cycle: Orders does not know who listens to `OrderPlaced`. Set `listeners.cycles` to `true` in `config/cordon.php` and Cordon also reports `Catalog -> Orders -> Catalog` as a cycle.
 
 One way to fix it: add a `stockOf()` method to `ProductCatalog` for the check, and have Catalog react to the order through something Catalog owns, or let Orders call a Catalog contract to reserve the stock.
 
@@ -57,7 +57,7 @@ One way to fix it: add a `stockOf()` method to `ProductCatalog` for the check, a
 
 ```yaml
 - uses: actions/checkout@v7
-- uses: ChrisAbner/Cordon-Modulith@v0.3.0
+- uses: ChrisAbner/Cordon-Modulith@v0.4.0
 ```
 
 The action installs the Composer dependencies and runs `vendor/bin/cordon verify --format=github`. It does not boot the application, so the job needs no `.env`, database or `APP_KEY`.
