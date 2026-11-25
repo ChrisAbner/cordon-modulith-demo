@@ -57,7 +57,7 @@ One way to fix it: add a `stockOf()` method to `ProductCatalog` for the check, a
 
 ```yaml
 - uses: actions/checkout@v7
-- uses: ChrisAbner/Cordon-Modulith@v0.4.0
+- uses: ChrisAbner/Cordon-Modulith@v0.5.0
 ```
 
 The action installs the Composer dependencies and runs `vendor/bin/cordon verify --format=github`. It does not boot the application, so the job needs no `.env`, database or `APP_KEY`.

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "077e7f8ed355ec03c03b2d9b14cc02cf",
+    "content-hash": "d2e3b8b0cba5840c7bc4f31a28b26272",
     "packages": [
         {
             "name": "brick/math",
@@ -6209,16 +6209,16 @@
     "packages-dev": [
         {
             "name": "chrisabner/cordon-modulith",
-            "version": "v0.4.0",
+            "version": "v0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ChrisAbner/Cordon-Modulith.git",
-                "reference": "7ae9613257b64be78fb289b21ec5fe5b721e4c8c"
+                "reference": "53f28004dd590ed8dad6132ddae61451907f7378"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ChrisAbner/Cordon-Modulith/zipball/7ae9613257b64be78fb289b21ec5fe5b721e4c8c",
-                "reference": "7ae9613257b64be78fb289b21ec5fe5b721e4c8c",
+                "url": "https://api.github.com/repos/ChrisAbner/Cordon-Modulith/zipball/53f28004dd590ed8dad6132ddae61451907f7378",
+                "reference": "53f28004dd590ed8dad6132ddae61451907f7378",
                 "shasum": ""
             },
             "require": {
@@ -6228,6 +6228,7 @@
                 "illuminate/support": "^12.0|^13.0",
                 "nikic/php-parser": "^5.3",
                 "php": "^8.2",
+                "phpstan/phpdoc-parser": "^2.0",
                 "vlucas/phpdotenv": "^5.6.1"
             },
             "require-dev": {
@@ -6284,8 +6285,8 @@
                 "issues": "https://github.com/ChrisAbner/Cordon-Modulith/issues",
                 "source": "https://github.com/ChrisAbner/Cordon-Modulith"
             },
-            "time": "2026-11-11T23:01:11+00:00",
-            "published-time": "2026-11-11T23:01:37+00:00"
+            "time": "2026-11-25T22:00:59+00:00",
+            "published-time": "2026-11-25T22:01:17+00:00"
         },
         {
             "name": "fakerphp/faker",
@@ -7140,6 +7141,54 @@
             },
             "time": "2022-02-21T01:04:05+00:00",
             "published-time": "2022-02-21T01:04:30+00:00"
+        },
+        {
+            "name": "phpstan/phpdoc-parser",
+            "version": "2.4.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpdoc-parser.git",
+                "reference": "f80e753caa465ab4f93cb265ae32e2e8cb02c3f3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/f80e753caa465ab4f93cb265ae32e2e8cb02c3f3",
+                "reference": "f80e753caa465ab4f93cb265ae32e2e8cb02c3f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^2.0",
+                "nikic/php-parser": "^5.3.0",
+                "php-parallel-lint/php-parallel-lint": "^1.2",
+                "phpstan/extension-installer": "^1.0",
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpstan/phpstan-strict-rules": "^2.0",
+                "phpunit/phpunit": "^9.6",
+                "symfony/process": "^5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PHPStan\\PhpDocParser\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPDoc parser with support for nullable, intersection and generic types",
+            "support": {
+                "issues": "https://github.com/phpstan/phpdoc-parser/issues",
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/2.4.2"
+            },
+            "time": "2026-11-25T13:45:51+00:00",
+            "published-time": "2026-11-25T13:46:33+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
